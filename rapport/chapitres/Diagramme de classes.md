@@ -71,3 +71,5 @@ classDiagram
     Course "1" --> "0..*" Enrollment : enregistre
     Student "0..*" .. "0..*" Course : s'inscrit à
 ```
+
+![Diagramme de classes](../assets/diagramme%20de%20class.png)

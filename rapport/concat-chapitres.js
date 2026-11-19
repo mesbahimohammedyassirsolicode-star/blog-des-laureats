@@ -1,57 +1,261 @@
+
 /**
- * Script Node.js de concatenation modulaire des chapitres du rapport.
- * Usage : node concat-chapitres.js
+ * BLOG DES LAUREATS
+ * Automatic Markdown Report Compiler
+ *
+ * - Detect all Markdown files
+ * - Include empty chapters
+ * - Generate headings for empty files
+ * - Respect custom chapter order
+ * - Add new files automatically
+ * - Correct image paths
+ *
+ * Usage: node concat-chapitres.js
  */
 
 const fs = require('fs');
 const path = require('path');
 
-const chapitresDir = path.join(__dirname, 'chapitres');
-const outputFile = path.join(__dirname, 'rapport-blog.md');
+// ======================================
+// 1. CONFIGURATION
+// ======================================
 
-console.log('--- Compilation du Rapport de Projet ---');
+const ROOT = __dirname;
+const CHAPTERS_DIR = path.join(ROOT, 'chapitres');
+const OUTPUT_FILE = path.join(ROOT, 'rapport-blog.md');
 
-if (!fs.existsSync(chapitresDir)) {
-  console.error(`Erreur : Le dossier "${chapitresDir}" n'existe pas.`);
-  process.exit(1);
+// Ordre principal selon skeleton.md
+const ordreChapitres = [
+    'Remerciement.md',
+    '01-introduction.md',
+    'Contexte du projet.md',
+    'Cahier des charges.md',
+
+    'Méthodologie de travail.md',
+    'methode_scrum.md',
+    'processus_2tup.md',
+    'design_thinking.md',
+
+    'Planification.md',
+
+    'Branche fonctionnelle.md',
+    "Carte d'empathie.md",
+    'Définition du problème.md',
+    'Idéation.md',
+    "Diagramme de cas d'utilisation.md",
+
+    'branch_technique.md',
+    'Stack technologique.md',
+    'architecture_du_system.md',
+    'Prototype (fonctionnalités, classes).md',
+
+    'Conception.md',
+    'Diagramme de classes.md',
+    'Maquettes.md',
+
+    'Réalisation.md',
+    'Interfaces.md',
+
+    '02-conclusion.md'
+];
+
+// ======================================
+// 2. CHECK DIRECTORIES
+// ======================================
+
+console.log('\n====================================');
+console.log(' BLOG DES LAUREATS - COMPILATION');
+console.log('====================================\n');
+
+if (!fs.existsSync(CHAPTERS_DIR)) {
+    console.error('Erreur : dossier chapitres introuvable.');
+    process.exit(1);
 }
 
-// Lire tous les fichiers .md du dossier chapitres, en ignorant README.md
-const files = fs.readdirSync(chapitresDir)
-  .filter(file => file.endsWith('.md') && file.toLowerCase() !== 'readme.md')
-  .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
+// ======================================
+// 3. DETECT ALL MARKDOWN FILES
+// ======================================
 
-if (files.length === 0) {
-  console.warn('Attention : Aucun chapitre Markdown trouve a compiler.');
-  process.exit(0);
+const allFiles = fs.readdirSync(CHAPTERS_DIR)
+    .filter(file =>
+        file.toLowerCase().endsWith('.md') &&
+        file.toLowerCase() !== 'readme.md'
+    );
+
+// Files already in the custom order
+const orderedFiles = ordreChapitres.filter(file =>
+    allFiles.includes(file)
+);
+
+// Files not present in the custom order
+const additionalFiles = allFiles
+    .filter(file => !ordreChapitres.includes(file))
+    .sort((a, b) =>
+        a.localeCompare(b, undefined, {
+            numeric: true,
+            sensitivity: 'base'
+        })
+    );
+
+// Final list: custom order + additional files
+const files = [...orderedFiles, ...additionalFiles];
+
+console.log(`Total des fichiers détectés : ${files.length}`);
+console.log(`Chapitres principaux : ${orderedFiles.length}`);
+console.log(`Fichiers supplémentaires : ${additionalFiles.length}`);
+
+// ======================================
+// 4. GENERATE CHAPTER TITLE
+// ======================================
+
+function generateTitle(filename) {
+
+    return path.basename(filename, '.md')
+        .replace(/[-_]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .replace(/\b\w/g, letter => letter.toUpperCase());
 }
 
-console.log(`Chapitres detectes (${files.length}) :`);
-files.forEach((file, index) => {
-  console.log(`  ${index + 1}. ${file}`);
-});
+// ======================================
+// 5. REPORT HEADER
+// ======================================
 
-// En-tête global du rapport
-let content = `# Rapport de Projet : Blog des Lauréats
+let content = `---
+marp: true
+theme: default
+size: 16:9
+paginate: true
+---
 
-> Document consolidé généré automatiquement à partir des chapitres modulaires.
+# Rapport de Projet : Blog des Lauréats
+
+> Document consolidé généré automatiquement.
+
 > Date de génération : ${new Date().toISOString().split('T')[0]}
 
 ---
 
 `;
 
-// Concaténer chaque chapitre
+// ======================================
+// 6. COMPILE ALL CHAPTERS
+// ======================================
+
+let compteur = 0;
+let chapitresVides = 0;
+const imagesManquantes = [];
+
 files.forEach((file, index) => {
-  const filePath = path.join(chapitresDir, file);
-  const chapterContent = fs.readFileSync(filePath, 'utf-8').trim();
-  content += chapterContent + '\n\n';
-  if (index < files.length - 1) {
-    content += '---\n\n';
-  }
+
+    const filePath = path.join(CHAPTERS_DIR, file);
+
+    let chapterContent = fs.readFileSync(
+        filePath,
+        'utf-8'
+    ).trim();
+
+    const title = generateTitle(file);
+
+    console.log(`\n[${index + 1}/${files.length}] ${file}`);
+
+    // Empty chapter: generate a title automatically
+    if (!chapterContent) {
+
+        chapterContent = `# ${title}\n\n`;
+
+        console.log('  + Chapitre vide : titre généré');
+        chapitresVides++;
+
+    } else {
+
+        // Preserve existing content
+        console.log('  + Contenu ajouté');
+    }
+
+    // Correct image paths
+    chapterContent = chapterContent.replaceAll(
+        '../assets/',
+        'assets/'
+    );
+
+    // Check Markdown images
+    const images = [
+        ...chapterContent.matchAll(
+            /!\[[^\]]*\]\((?:<([^>]+)>|([^)\s]+))[^)]*\)/g
+        )
+    ];
+
+    images.forEach(match => {
+
+        const imagePath = match[1] || match[2];
+
+        if (/^(https?:|data:)/i.test(imagePath)) {
+            return;
+        }
+
+        const decodedPath = decodeURIComponent(
+            imagePath.split(/[?#]/)[0]
+        );
+
+        const absolutePath = path.resolve(
+            ROOT,
+            decodedPath
+        );
+
+        if (!fs.existsSync(absolutePath)) {
+
+            console.log(`  ⚠ Image introuvable : ${imagePath}`);
+
+            imagesManquantes.push({
+                chapter: file,
+                image: imagePath
+            });
+
+        } else {
+
+            console.log(`  ✓ Image trouvée : ${imagePath}`);
+        }
+    });
+
+    // Add chapter to final report
+    content += chapterContent + '\n\n---\n\n';
+
+    compteur++;
 });
 
-// Écrire le fichier consolidé
-fs.writeFileSync(outputFile, content, 'utf-8');
+// ======================================
+// 7. GENERATE FINAL FILE
+// ======================================
 
-console.log(`Succes : Rapport compile avec succes dans "${path.basename(outputFile)}" !`);
+fs.writeFileSync(
+    OUTPUT_FILE,
+    content,
+    'utf-8'
+);
+
+// ======================================
+// 8. FINAL SUMMARY
+// ======================================
+
+console.log('\n====================================');
+console.log('       COMPILATION TERMINEE');
+console.log('====================================');
+
+console.log(`Fichiers ajoutés       : ${compteur}`);
+console.log(`Chapitres vides        : ${chapitresVides}`);
+console.log(`Images manquantes      : ${imagesManquantes.length}`);
+
+if (imagesManquantes.length > 0) {
+
+    console.log('\n--- IMAGES MANQUANTES ---');
+
+    imagesManquantes.forEach(item => {
+        console.log(
+            `- ${item.image} (Chapitre : ${item.chapter})`
+        );
+    });
+}
+
+console.log('\n✓ Rapport généré : rapport-blog.md');
+console.log('====================================\n');
