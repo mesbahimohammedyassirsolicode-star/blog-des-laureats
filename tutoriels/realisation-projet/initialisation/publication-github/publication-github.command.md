@@ -1,4 +1,4 @@
-### L’historique des commandes
+# L’historique des commandes
 
 ## gh auth status
 ## mkdir blog-des-laureats
