@@ -241,6 +241,10 @@ let content = `# Rapport de Projet : Blog des Lauréats
 
 > Date de génération : ${new Date().toISOString().split('T')[0]}
 
+# Table des matières
+
+<!-- TABLE_DES_MATIERES -->
+
 `;
 
 // ============================================
@@ -250,6 +254,17 @@ let content = `# Rapport de Projet : Blog des Lauréats
 let compteur = 0;
 let chapitresVides = 0;
 let fichiersSupplementaires = 0;
+const tableDesMatieres = [];
+
+function creerAncreMarkdown(titre) {
+    return titre
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .replace(/[^\p{L}\p{N}\s-]/gu, '')
+        .trim()
+        .replace(/\s+/g, '-');
+}
 
 const fichiersSansNumero = files.filter(
     file => getNumber(file) === Infinity
@@ -288,6 +303,15 @@ files.forEach((file, index) => {
         file
     );
 
+    const titres = [...chapterContent.matchAll(/^# (.+)$/gm)];
+    titres.forEach(match => {
+        const titre = match[1].replace(/\s+#*\s*$/, '').trim();
+        tableDesMatieres.push({
+            titre,
+            ancre: creerAncreMarkdown(titre)
+        });
+    });
+
     // Corriger et verifier les images
     chapterContent = processImages(
         chapterContent,
@@ -308,6 +332,15 @@ files.forEach((file, index) => {
 // ============================================
 // 10. GENERATION DU FICHIER FINAL
 // ============================================
+
+const listeSommaire = tableDesMatieres
+    .map(entry => `- [${entry.titre}](#${entry.ancre})`)
+    .join('\n');
+
+content = content.replace(
+    '<!-- TABLE_DES_MATIERES -->',
+    listeSommaire
+);
 
 fs.writeFileSync(
     OUTPUT_FILE,

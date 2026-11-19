@@ -4,6 +4,31 @@
 
 > Date de génération : 2026-11-19
 
+# Table des matières
+
+- [Introduction](#introduction)
+- [Contexte du projet](#contexte-du-projet)
+- [Cahier des charges](#cahier-des-charges)
+- [Méthodologie de travail](#methodologie-de-travail)
+- [Méthode de travail](#methode-de-travail)
+- [Design thinking](#design-thinking)
+- [Planification](#planification)
+- [Branche fonctionnelle](#branche-fonctionnelle)
+- [Carte d'empathie](#carte-dempathie)
+- [Définition du problème](#definition-du-probleme)
+- [Idéation](#ideation)
+- [Diagramme de cas d'utilisation](#diagramme-de-cas-dutilisation)
+- [Branche technique](#branche-technique)
+- [Stack technologique](#stack-technologique)
+- [Architecture du système](#architecture-du-systeme)
+- [Prototype (fonctionnalités, classes)](#prototype-fonctionnalites-classes)
+- [Conception](#conception)
+- [Diagramme de classes](#diagramme-de-classes)
+- [Maquettes](#maquettes)
+- [Réalisation](#realisation)
+- [Interfaces](#interfaces)
+- [Conclusion](#conclusion)
+
 ### Remerciements 
 Je tiens à exprimer ma profonde et sincère gratitude envers toutes les personnes qui ont contribué, de près ou de loin, à l'aboutissement de ce projet de fin d'études. Ce travail n'aurait pu voir le jour sans leur précieux concours, leur engagement et leur bienveillance.
 
