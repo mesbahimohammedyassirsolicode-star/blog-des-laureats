@@ -1,30 +1,18 @@
 # Rapport de Projet : Blog des Lauréats
 
-> Document consolidé à partir des chapitres modulaires.
+> Document consolidé généré automatiquement.
 
 > Date de génération : 2026-11-19
 
----
-
 # Remerciement
 
----
-
-# Introduction
-
----
+#  Introduction
 
 # Contexte du projet
 
----
-
 # Cahier des charges
 
----
-
 # Méthodologie de travail
-
----
 
 # Méthode de travail
 
@@ -51,8 +39,6 @@ La méthodologie Scrum est une méthodologie agile qui permet de gérer un proje
 ### Sprint 2 :
 
 -
-
----
 
 # Design thinking
 
@@ -85,31 +71,17 @@ Le processus du Design Thinking se compose de plusieurs étapes essentielles :
 
 Le Design Thinking est donc une méthode structurée et flexible qui permet de transformer une idée en solution concrète en mettant toujours l’utilisateur au centre du processus.
 
----
-
 # Planification
-
----
 
 # Branche fonctionnelle
 
----
-
 # Carte d'empathie
-
----
 
 # Définition du problème
 
----
-
 # Idéation
 
----
-
 # Diagramme de cas d'utilisation
-
----
 
 # Branche technique
 
@@ -144,11 +116,7 @@ Dans le cadre de ce projet, plusieurs technologies modernes et complémentaires 
 - **Mermaid** : Outil permettant de générer des schémas et diagrammes à partir d'une syntaxe textuelle simple.
 - **PlantUML** : Solution utilisée pour concevoir les différents diagrammes UML nécessaires à l'analyse et à la documentation du système.
 
----
-
 # Stack technologique
-
----
 
 # Architecture du système
 
@@ -219,17 +187,9 @@ Le parcours d’une requête est le suivant :
 2. `api.php` transmet l’opération au traitement PHP, puis à la classe qui lit ou met à jour le fichier JSON.
 3. Le résultat est renvoyé au navigateur au format JSON ; l’interface affiche la liste actualisée.
 
----
-
 # Prototype (fonctionnalités, classes)
 
----
-
 # Conception
-
----
-
-# Diagramme de classes
 
 ```mermaid
 classDiagram
@@ -305,23 +265,13 @@ classDiagram
     Student "0..*" .. "0..*" Course : s'inscrit à
 ```
 
-![Diagramme de classes](assets/diagramme de class.png)
-
----
+![Diagramme de classes](assets/diagramme%20de%20class.png)
 
 # Maquettes
 
----
-
 # Réalisation
 
----
-
 # Interfaces
-
----
-
-# rapport methode agile template
 
 ## 2.3 2TUP
 
@@ -380,9 +330,5 @@ organisation]**. Elle constitue ainsi une approche pertinente pour les
 projets dont les exigences fonctionnelles et les contraintes techniques
 doivent être analysées conjointement.
 
----
-
 # Conclusion
-
----
 

@@ -19,4 +19,3 @@ Le fichier unique consolidé `rapport-blog.md` est généré automatiquement à 
 - Lancer le script de compilation après chaque modification pour mettre à jour `rapport-blog.md`.
 - Respecter les règles générales : zéro tableau Markdown, liens relatifs et français professionnel.
 - L'ordre officiel est défini dans `skeleton.md` ; les chapitres non listés sont ajoutés automatiquement avant la conclusion.
-- Générer le PDF avec : `npx marp rapport-blog.md --pdf --allow-local-files -o rapport-blog.pdf`
