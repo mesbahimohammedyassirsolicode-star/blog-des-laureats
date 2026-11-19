@@ -73,7 +73,7 @@ Le projet intègre les meilleures pratiques de l'ingénierie logicielle :
 
 ### Cloner le projet
 ```bash
-git clone https://github.com/[votre-compte-github]/blog-des-laureats.git
+git clone https://github.com/mesbahimohammedyassirsolicode-star/blog-des-laureats
 cd blog-des-laureats
 git checkout sprint1
 ```
