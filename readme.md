@@ -1,79 +1,65 @@
-# Blog des Lauréats - Projet d'Imitation Niveau 3
+# Blog des Lauréats
 
-## 1. Description du projet
-Le Blog des Lauréats est une application web conçue pour la communauté de Solicode Tanger.
-Les lauréats peuvent rédiger, publier et administrer leurs articles professionnels.
-Les apprenants actuels de Solicode peuvent consulter et lire ces retours d'expérience. L'application est déployée et accessible en ligne sur Internet.
+Projet pédagogique de Solicode Tanger destiné à présenter les parcours professionnels et les articles des lauréats de l'établissement.
 
----
+## Description
 
-## 2. Contexte et Objectifs
+Le **Blog des Lauréats** permet aux lauréats de partager leurs expériences professionnelles et aux apprenants actuels de consulter ces publications.
 
-### Contexte général
+Le dépôt contient actuellement les éléments de cadrage, de planification, de documentation et de présentation du projet. Il ne contient pas encore l'application Laravel complète.
+
+## Contexte
+
 - **Établissement** : Solicode Tanger.
-- **Promotion** :  2026/2027 DevCave.
+- **Promotion** : 2026/2027 DevCave.
 - **Formateur référent** : ES-SARRAJ Fouad.
+- **Sprint actif** : Sprint 1.
 
-### Démarche pédagogique : Méthode par imitation
-Ce projet s'appuie sur la méthode par imitation pour guider l'apprenant pas à pas de A à Z :
-- **Tutoriels** : Guides complets détaillant les étapes et les résultats attendus.
-- **UA-Lab** : Laboratoires d'apprentissage guidés pour maîtriser les bases théoriques et pratiques.
-- **Lab** : Recherche autonome d'une solution technique validée par le formateur.
-- **Veille technologique** : Découverte et intégration de nouveaux outils ou composants.
-- **Tâches** : Actions pratiques d'ingénierie et d'organisation Scrum.
+## Fonctionnalités prévues
 
-### Composants pédagogiques (Approche Par Compétences - APC)
-- **Domaine de compétence** : Regroupement thématique des compétences du référentiel.
-- **Unité d'apprentissage (UA)** :
-  - **UA-Tuto** : Unité basée sur des tutoriels pas-à-pas.
-  - **UA-Lab** : Unité pratique guidée par le formateur.
-  - **UA-tâche** : Unité regroupant les tâches récurrentes de gestion Scrum à chaque sprint.
+- Consulter la liste des articles publiés.
+- Consulter le détail d'un article.
+- Présenter les lauréats auteurs.
+- Permettre aux lauréats autorisés de rédiger et publier des articles.
+- Permettre aux administrateurs de gérer les utilisateurs, les articles et les catégories.
+- Afficher une page d'erreur lorsque l'article demandé n'existe pas.
 
----
+## Acteurs
 
-## 3. Stack technique et Architecture
-- **Framework Backend** : Laravel 13 (PHP).
-- **Architecture logicielle** : Architecture 3tier ,MVC .
-- **Frontend & Vues** : Gabarits Blade responsives, HTML5, CSS3, JavaScript ,Alpinejs,Tailwaind ,Preline .
-- **Base de données** : MySQL.
-- **Modélisation** : Diagramme de contexte et cas d'utilisation avec Mermaid.
-- **Gestion de versions & Outils** : Git et GitHub CLI (`gh`).
-- **Intelligence Artificielle & Automatisation** : Agent Antigravity (Skills natifs et règles Always-On) Github(Skills natifs et règles Always-On).
-- **Documentation et Présentations** : Markdown standard et Marp.
-- **Sécurite** : autorisation alpine,authentication laravel.
+- **Lauréat** : rédige et publie ses articles professionnels.
+- **Apprenant** : consulte les articles et découvre les parcours des lauréats.
+- **Formateur** : accompagne les apprenants et peut consulter ou contrôler les contenus.
+- **Recruteur** : consulte les profils et les articles afin d'évaluer les parcours professionnels.
+- **Administrateur** : gère les utilisateurs, les articles et les catégories.
 
----
+## Stack technique prévue
 
-## 4. Organisation des dossiers
-- [.agents/](./.agents/) : Configuration native de l'Agent IA (règles permanentes et skills outillés avec leurs missions).
-- [docs/](./docs/) : Documentation libre, recherches et veilles technologiques personnelles.
-- [flux-travail/](./flux-travail/) : Référentiel méthodologique et suivi des étapes de réalisation du projet.
-- [issues/](./issues/) : Gestion et suivi des tâches et user stories du projet.
-- [tutoriels/](./tutoriels/) : Restitution des tutoriels et ateliers pratiques organisés par domaine.
-- [presentations/](./presentations/) : Diaporamas Marp du projet et des restitutions de sprints.
-- [rapport/](./rapport/) : Rapport modulaire du projet, chapitres et script de compilation Node.js.
-- [sprints/](./sprints/) : Planification Scrum des sprints et suivi de la branche active.
+- **Backend** : PHP 8.2+ et Laravel.
+- **Architecture du Sprint 1** : contrôleur mince délégant la logique à une classe Service.
+- **Frontend** : Blade, HTML5, CSS3, JavaScript, Tailwind CSS, Alpine.js et éventuellement Preline.
+- **Base de données** : MySQL pour la version complète.
+- **Modélisation** : Mermaid pour les diagrammes UML.
+- **Gestion de versions** : Git et GitHub CLI (`gh`).
+- **Documentation** : Markdown et Marp.
+- **Sécurité** : authentification Laravel et contrôle des autorisations.
 
----
+## Organisation du dépôt
 
-## 5. Méthodologie de développement
-Le projet intègre les meilleures pratiques de l'ingénierie logicielle :
-- **Agile / Scrum** : Découpage par sprints, réunions quotidiennes et revues de sprint.
-- **Processus 2TUP** : Séparation claire entre la branche fonctionnelle et la branche technique.
-- **Design Thinking** : Conception centrée sur les besoins réels des utilisateurs.
-- **Modélisation UML** : Schémas de cas d'utilisation, diagrammes de classes et de séquences.
+- [docs/](./docs/) : documentation et recherches.
+- [flux-travail/](./flux-travail/) : organisation du processus de réalisation.
+- [issues/](./issues/) : suivi des tâches et des user stories.
+- [presentations/](./presentations/) : présentations Marp.
+- [rapport/](./rapport/) : rapport modulaire du projet.
+- [sprints/](./sprints/) : planification Scrum.
+- [tutoriels/](./tutoriels/) : tutoriels et ateliers.
 
----
+## Rapport
 
-## 6. Démarrage rapide
+Le rapport est découpé en chapitres indépendants dans [rapport/chapitres/](./rapport/chapitres/). Pour le régénérer après une modification :
 
-### Prérequis
-- Git installé sur votre machine.
-- GitHub CLI (`gh`) configuré et authentifié.
-
-### Cloner le projet
 ```bash
-git clone https://github.com/mesbahimohammedyassirsolicode-star/blog-des-laureats
-cd blog-des-laureats
-git checkout sprint1
+cd rapport
+npm run build
 ```
+
+Le fichier consolidé est enregistré dans [rapport/rapport-blog.md](./rapport/rapport-blog.md).

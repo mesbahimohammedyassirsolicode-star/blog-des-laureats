@@ -4,13 +4,58 @@
 
 > Date de génération : 2026-11-19
 
-# Remerciement
+### Remerciements 
+Je tiens à exprimer ma profonde et sincère gratitude envers toutes les personnes qui ont contribué, de près ou de loin, à l'aboutissement de ce projet de fin d'études. Ce travail n'aurait pu voir le jour sans leur précieux concours, leur engagement et leur bienveillance.
 
-#  Introduction
+En premier lieu, j'adresse mes remerciements les plus chaleureux à M. ES-SARRAJ Fouad., mon encadrante pédagogique, dont les conseils avisés, la rigueur scientifique et la disponibilité permanente ont été des guides indispensables tout au long de la conduite de ce projet. Ses orientations méthodologiques et ses retours critiques ont considérablement enrichi la qualité de ce travail.
+
+Je remercie également l'ensemble du corps professoral et administratif de Solicode pour la qualité de la formation dispensée, qui m'a fourni les outils conceptuels et techniques nécessaires à la réalisation de ce projet. Chaque cours, chaque atelier pratique et chaque projet académique ont contribué à forger les compétences mobilisées dans ce mémoire.
+
+Ma reconnaissance va également à mes camarades de promotion pour les échanges intellectuels fructueux, l'entraide permanente et le partage de connaissances qui ont caractérisé notre cohabitation académique. Ces interactions ont nourri ma réflexion et stimulé ma créativité tout au long du processus de développement.
+
+Enfin, je ne saurais clore ces remerciements sans exprimer ma profonde gratitude envers ma famille, dont le soutien moral et matériel m'a permis de mener mes études dans les meilleures conditions possibles. Leur foi en mes capacités a été le moteur de ma persévérance.
+
+Merci à tous.
+
+# Introduction
+
+Le **Blog des Lauréats** est un projet pédagogique réalisé dans le cadre de la formation développeur web à Solicode Tanger. Il vise à mettre en valeur les parcours professionnels des lauréats et à partager leurs expériences avec les apprenants actuels.
+
+L'application permettra principalement de consulter les articles publiés, d'afficher le profil des auteurs et d'administrer les contenus selon les rôles attribués.
+
+Les principaux acteurs sont le lauréat, qui partage son expérience, l'apprenant, qui découvre les parcours professionnels, le formateur, qui accompagne et encadre les apprenants, le recruteur, qui consulte les profils pour évaluer les compétences, et l'administrateur, qui gère la plateforme.
+
+Le projet est conduit progressivement avec les méthodes Scrum et 2TUP : l'analyse fonctionnelle décrit les besoins des utilisateurs, tandis que l'analyse technique définit les choix d'architecture et les technologies.
 
 # Contexte du projet
 
+Solicode Tanger forme des apprenants aux métiers du développement numérique. À la fin de leur parcours, les lauréats possèdent des retours d'expérience utiles pour les promotions suivantes. Le Blog des Lauréats répond au besoin de rendre ces témoignages accessibles, structurés et durables.
+
+Les utilisateurs concernés sont les lauréats, les apprenants, les formateurs, les recruteurs et les administrateurs du blog. Le projet doit faciliter la consultation des articles, la publication de contenus professionnels, l'accompagnement pédagogique et la gestion administrative de la plateforme.
+
 # Cahier des charges
+
+## Objectifs fonctionnels
+
+- Permettre à chaque acteur d'accéder aux fonctionnalités correspondant à son rôle.
+- Consulter la liste des articles publiés.
+- Consulter le détail d'un article.
+- Présenter les lauréats auteurs, leurs parcours et leurs expériences professionnelles.
+- Permettre aux lauréats autorisés de rédiger et publier des articles.
+- Permettre aux apprenants de consulter les articles et les profils des lauréats.
+- Permettre aux formateurs de suivre les contenus destinés aux apprenants.
+- Permettre aux recruteurs de consulter les profils pour évaluer les parcours professionnels.
+- Permettre aux administrateurs de gérer les utilisateurs, les articles et les catégories.
+- Afficher une page d'erreur adaptée lorsqu'un article n'existe pas.
+
+## Contraintes techniques
+
+- Utiliser PHP, Laravel et une architecture MVC.
+- Utiliser Blade pour les vues.
+- Utiliser MySQL pour la persistance des données dans la version complète.
+- Produire une interface responsive.
+- Respecter les règles d'authentification et d'autorisation définies pour les rôles.
+- Documenter les travaux avec Markdown, Mermaid et les outils de présentation du dépôt.
 
 # Méthodologie de travail
 
@@ -18,7 +63,7 @@
 
 ## La méthode SCRUM
 
-La méthodologie Scrum est une méthodologie agile qui permet de gérer un projet de manière flexible et collaborative, en favorisant la livraison progressive de fonctionnalités. Elle repose sur l'itération, la priorisation des tâches et la communication régulière entre les membres de l'équipe. Dans le cadre de ce projet Promatch, nous avons organisé le travail selon les principes de Scrum, ce qui nous a permis de mieux planifier, suivre et livrer les différentes fonctionnalités de manière efficace.
+La méthodologie Scrum permet de gérer le développement du Blog des Lauréats de manière flexible et progressive. Le projet est découpé en sprints, puis les fonctionnalités sont priorisées, réalisées, vérifiées et intégrées selon les résultats obtenus.
 
 ![Méthodologie Scrum](assets/scrum.png)
 
@@ -32,17 +77,15 @@ La méthodologie Scrum est une méthodologie agile qui permet de gérer un proje
 
 **Organisation du projet en sprints :**
 
-### Sprint 1
+### Sprint 1 : initialisation et première fonctionnalité
 
--
+Le Sprint 1 comprend l'initialisation du dépôt, la configuration de l'environnement, le cadrage du projet, la modélisation fonctionnelle, la gestion du backlog et l'implémentation de la consultation détaillée d'un article.
 
-### Sprint 2 :
-
--
+L'architecture retenue pour cette première fonctionnalité sépare un contrôleur Laravel mince d'une classe Service contenant la logique de récupération de l'article. Une vue Blade présente les informations et une réponse HTTP adaptée est affichée lorsque l'article n'existe pas.
 
 # Design thinking
 
-Ainsi, l’adoption de la méthode Scrum a permis d’assurer une organisation efficace du travail et une meilleure gestion du projet. Elle a contribué à améliorer la qualité des fonctionnalités développées et à garantir un déroulement structuré du projet ImmoSync.
+Ainsi, l'adoption de Scrum permet d'assurer une organisation progressive du travail autour du Blog des Lauréats. La collaboration, les revues de sprint et les ajustements réguliers servent à maintenir l'application alignée avec les besoins de ses utilisateurs.
 
 ## Design thinking
 
@@ -75,13 +118,86 @@ Le Design Thinking est donc une méthode structurée et flexible qui permet de t
 
 # Branche fonctionnelle
 
+La branche fonctionnelle analyse les besoins des acteurs du Blog des Lauréats :
+
+- le **lauréat** rédige des articles et présente son parcours ;
+- l'**apprenant** consulte les retours d'expérience et découvre les compétences professionnelles ;
+- le **formateur** accompagne les apprenants et peut superviser les ressources pédagogiques ;
+- le **recruteur** consulte les profils et les articles afin d'évaluer les candidats ;
+- l'**administrateur** gère les utilisateurs, les articles et les catégories.
+
+Les fonctionnalités sont définies en fonction de ces rôles afin d'assurer une navigation adaptée et des autorisations cohérentes.
+
 # Carte d'empathie
 
+## Apprenant
+
+- **Voit** : des articles techniques, des témoignages et les parcours des lauréats.
+- **Entend** : les conseils des formateurs et les expériences de professionnels ayant terminé la formation.
+- **Pense** : aux compétences nécessaires pour réussir sa formation et son insertion professionnelle.
+- **Ressent** : le besoin d'exemples concrets, clairs et inspirants.
+
+## Lauréat
+
+- **Voit** : une plateforme permettant de présenter ses réalisations.
+- **Entend** : l'intérêt des apprenants et des recruteurs pour son parcours.
+- **Pense** : à transmettre une expérience professionnelle utile.
+- **Ressent** : le besoin d'une interface simple pour publier ses articles.
+
+## Formateur
+
+- **Voit** : les ressources utilisées pour accompagner les apprenants.
+- **Pense** : à la qualité pédagogique et à la pertinence des contenus.
+- **Ressent** : le besoin de pouvoir orienter les apprenants vers des témoignages adaptés.
+
+## Recruteur
+
+- **Voit** : les parcours, compétences et expériences des lauréats.
+- **Pense** : à l'adéquation du profil avec ses besoins professionnels.
+- **Ressent** : le besoin d'informations fiables et faciles à consulter.
+
 # Définition du problème
+
+Les expériences des lauréats ne sont pas suffisamment centralisées et faciles à consulter. Les apprenants doivent pouvoir s'inspirer de parcours réels, les formateurs doivent disposer de références professionnelles pertinentes, et les recruteurs doivent pouvoir évaluer rapidement les profils publiés.
+
+Le Blog des Lauréats vise à résoudre ce problème en proposant une plateforme de publication et de consultation structurée autour de cinq acteurs : le lauréat, l'apprenant, le formateur, le recruteur et l'administrateur.
 
 # Idéation
 
 # Diagramme de cas d'utilisation
+
+```mermaid
+flowchart LR
+    Laureat[Lauréat]
+    Apprenant[Apprenant]
+    Formateur[Formateur]
+    Recruteur[Recruteur]
+    Admin[Administrateur]
+
+    UC1[Consulter les articles]
+    UC2[Consulter le profil d'un lauréat]
+    UC3[Rédiger et publier un article]
+    UC4[Suivre les ressources pédagogiques]
+    UC5[Évaluer les parcours professionnels]
+    UC6[Gérer les utilisateurs]
+    UC7[Gérer les articles]
+    UC8[Gérer les catégories]
+
+    Apprenant --> UC1
+    Apprenant --> UC2
+    Laureat --> UC1
+    Laureat --> UC2
+    Laureat --> UC3
+    Formateur --> UC1
+    Formateur --> UC2
+    Formateur --> UC4
+    Recruteur --> UC1
+    Recruteur --> UC2
+    Recruteur --> UC5
+    Admin --> UC6
+    Admin --> UC7
+    Admin --> UC8
+```
 
 # Branche technique
 
@@ -91,13 +207,12 @@ Dans cette section, nous présentons la branche technique de notre projet, qui c
 
 ## Choix technologiques
 
-Dans le cadre de ce projet, plusieurs technologies modernes et complémentaires ont été sélectionnées pour garantir la performance, la maintenabilité, la sécurité et la rapidité de la plateforme de gestion de copropriété immobilière.
+Dans le cadre du Blog des Lauréats, plusieurs technologies modernes ont été sélectionnées pour garantir la maintenabilité, la sécurité et la rapidité de la plateforme.
 
 ### Technologies Backend
 
-- **PHP 8.2+ et Laravel 12.0** : Ce duo technologique est utilisé pour développer le backend en architecture MVC, garantissant une base sécurisée, des performances accrues et un code structuré.
-- **Spatie Laravel Permission 7.4** : Bibliothèque pour la gestion professionnelle des rôles et des autorisations, garantissant un cloisonnement strict des accès.
-- **NativePHP** : Framework pour transformer l'application Laravel en application mobile (Android, iOS) pour les résidents.
+- **PHP 8.2+ et Laravel** : Ce duo technologique est utilisé pour développer le backend en architecture MVC, garantissant une base sécurisée, des performances accrues et un code structuré.
+
 
 ### Technologies Frontend
 
@@ -122,147 +237,110 @@ Dans le cadre de ce projet, plusieurs technologies modernes et complémentaires 
 
 ## Architecture MVC
 
-Le modèle MVC répartit une application en trois rôles :
+Le modèle MVC répartit l'application en trois rôles :
 
-- **Modèle** : représente les données et les règles qui leur sont liées.
-- **Vue** : affiche les informations et reçoit les actions de l’utilisateur.
-- **Contrôleur** : reçoit une action, sollicite le modèle et transmet le résultat à la vue.
-
-```mermaid
-flowchart LR
-    U[Utilisateur] -->|action| V[Vue]
-    V -->|requête| C[Contrôleur]
-    C -->|lecture ou modification| M[Modèle]
-    M -->|données| C
-    C -->|résultat à afficher| V
-    V -->|affichage| U
-```
-
-_Figure 1 — Échange MVC : le contrôleur coordonne la vue et le modèle lors d’une requête._
-
-Dans le projet, MVC sert de **repère de compréhension**, mais n’est pas appliqué strictement : l’interface HTML/JavaScript est côté navigateur, tandis que le point d’entrée PHP et les classes de traitement jouent les rôles de coordination. La classe `Genre` représente les données métier.
-
-## Architecture 3-tiers
-
-Cette architecture sépare l’application en couches qui communiquent de proche en proche :
-
-- **Présentation** : interface HTML/JavaScript ; envoie les requêtes et affiche les réponses.
-- **Logique métier** : traite les opérations demandées par l’utilisateur.
-- **Accès aux données** : lit et écrit les données dans leur support de stockage.
-
-```mermaid
-flowchart TB
-    U[Utilisateur] --> P[Présentation<br/>HTML / JavaScript]
-    P -->|requête HTTP / JSON| L[Logique métier<br/>PHP]
-    L --> A[Accès aux données<br/>GestionGenre ou DAO]
-    A --> D[(Fichier JSON)]
-    D -->|données| A
-    A -->|résultat| L
-    L -->|réponse JSON| P
-    P -->|affichage| U
-```
-
-_Figure 2 — Les trois tiers séparent l’interface, le traitement des opérations et le stockage._
-
-## Architecture globale
-
-Le projet permet de consulter et d’ajouter des genres. L’interface du navigateur communique avec une API PHP via `fetch`. Les données sont conservées dans un fichier JSON ; elles ne sont pas stockées dans une base de données relationnelle.
+- **Modèle** : représente les données et les règles métier.
+- **Vue** : présente les informations avec les gabarits Blade.
+- **Contrôleur** : reçoit une requête, appelle les services ou modèles nécessaires et sélectionne la vue.
 
 ```mermaid
 flowchart LR
-    U[Utilisateur] <-->|interface| UI[Navigateur<br/>index.html et app.js]
-    UI -->|GET / POST<br/>JSON| API[API PHP<br/>backend/api/api.php]
-    API --> T[Traitement PHP<br/>contrôleur ou service]
-    T --> A[Accès aux données<br/>GestionGenre ou GenreDAO]
-    A -->|crée des objets| G[Modèle Genre]
-    A <-->|lecture / écriture| D[(backend/data<br/>fichier JSON des genres)]
-    API -->|réponse JSON| UI
+    U[Utilisateur] -->|requête| R[Route Laravel]
+    R --> C[Contrôleur]
+    C --> S[Service]
+    S --> M[Modèle]
+    M -->|article| S
+    S -->|résultat| C
+    C --> V[Vue Blade]
+    V -->|réponse HTML| U
 ```
 
-_Figure 3 — Architecture commune aux versions du projet ; les noms des classes varient selon la version._
+*Figure : Organisation MVC de la consultation d'un article.*
 
-Le parcours d’une requête est le suivant :
+## Architecture du Sprint 1
 
-1. `app.js` envoie une requête **GET** pour afficher les genres ou **POST** pour en ajouter un.
-2. `api.php` transmet l’opération au traitement PHP, puis à la classe qui lit ou met à jour le fichier JSON.
-3. Le résultat est renvoyé au navigateur au format JSON ; l’interface affiche la liste actualisée.
+Pour la première fonctionnalité, le contrôleur reste mince : il récupère les paramètres de la requête et délègue la recherche de l'article à une classe Service.
+
+```mermaid
+flowchart LR
+    U[Utilisateur] -->|demande un article| R[Route Laravel]
+    R --> C[ArticleController]
+    C -->|show| S[ArticleService]
+    S -->|find| M[Article]
+    M -->|résultat| S
+    S -->|objet article| C
+    C --> V[Vue Blade]
+    V -->|réponse HTML| U
+```
+
+*Figure : Architecture de la consultation détaillée d'un article.*
+
+Le parcours d'une requête est le suivant :
+
+1. L'utilisateur demande la page d'un article à une route Laravel.
+2. Le contrôleur appelle le service dédié.
+3. Le service utilise le modèle pour récupérer l'article.
+4. Le contrôleur transmet les données à une vue Blade.
+5. Si l'article n'existe pas, l'application retourne une erreur 404 adaptée.
 
 # Prototype (fonctionnalités, classes)
 
 # Conception
 
+# Diagramme de classes
+
 ```mermaid
 classDiagram
     direction TB
 
-    class Tutor {
-        -int id
-        -string firstName
-        -string lastName
-        -string email
-        -string phone
-        -string bio
-        +getFullName() string
-        +getCourses() List~Course~
-    }
-
-    class SchoolSubject {
+    class User {
         -int id
         -string name
-        -string description
-        -datetime createdAt
-        -datetime updatedAt
-        +getCourses() List~Course~
-        +toArray() array
+        -string email
+        -string password
+        -string role
+        +getArticles() List~Article~
     }
 
-    class Course {
+    class Laureat {
+        -int id
+        -string biography
+        -string promotion
+        -string speciality
+        +getUser() User
+        +getArticles() List~Article~
+    }
+
+    class Article {
         -int id
         -string title
         -string slug
-        -string description
-        -int tutorId
-        -int subjectId
+        -text content
         -string status
-        -datetime createdAt
-        -datetime updatedAt
-        +getTutor() Tutor
-        +getSubject() SchoolSubject
-        +getEnrolledStudents() List~Student~
+        -datetime publishedAt
         +publish() void
         +draft() void
-        +toArray() array
     }
 
-    class Student {
+    class Category {
         -int id
-        -string firstName
-        -string lastName
-        -string email
-        -string studentNumber
-        -datetime registeredAt
-        +getFullName() string
-        +getEnrolledCourses() List~Course~
-        +enrollInCourse(courseId) bool
+        -string name
+        -string slug
+        +getArticles() List~Article~
     }
 
-    class Enrollment {
-        -int id
-        -int studentId
-        -int courseId
-        -datetime enrolledAt
-        -string progressStatus
-        -float grade
-        +getStudent() Student
-        +getCourse() Course
+    class Actor {
+        <<enumeration>>
+        Laureat
+        Apprenant
+        Formateur
+        Recruteur
+        Administrateur
     }
 
-    Tutor "1" --> "0..*" Course : enseigne / dispense
-    SchoolSubject "1" --> "0..*" Course : catégorise
-
-    Student "1" --> "0..*" Enrollment : effectue
-    Course "1" --> "0..*" Enrollment : enregistre
-    Student "0..*" .. "0..*" Course : s'inscrit à
+    User "1" --> "0..1" Laureat : possède
+    Laureat "1" --> "0..*" Article : rédige
+    Category "1" --> "0..*" Article : classe
 ```
 
 ![Diagramme de classes](assets/diagramme%20de%20class.png)
@@ -279,8 +357,8 @@ classDiagram
 
 La méthode **2TUP** (*Two Tracks Unified Process*) est une méthode de
 développement logiciel agile et itérative. Elle peut être adaptée au contexte
-de **[Nom du projet]**, à ses objectifs et aux besoins de **[utilisateurs ou
-organisation]**.
+du **Blog des Lauréats**, à ses objectifs et aux besoins des lauréats,
+des apprenants, des formateurs, des recruteurs et des administrateurs.
 
 Sa particularité repose sur une architecture en « Y » qui sépare
 distinctement deux axes de réflexion :
@@ -290,10 +368,10 @@ distinctement deux axes de réflexion :
 - **la branche technique**, consacrée à l'étude des contraintes techniques,
   à la conception de l'architecture et au choix des technologies.
 
-La branche fonctionnelle permet de définir **[fonctionnalités ou besoins
-principaux]**, tandis que la branche technique permet de déterminer
-l'architecture et les outils nécessaires, tels que **[langages, frameworks,
-base de données ou services]**.
+La branche fonctionnelle permet de définir la consultation des articles,
+la gestion des auteurs et l'administration des contenus, tandis que la branche
+technique permet de déterminer l'architecture, les technologies Laravel et
+MySQL ainsi que les outils de présentation.
 
 Ces deux branches progressent en parallèle, puis se rejoignent dans une phase
 de réalisation. Cette organisation permet de limiter les risques, de vérifier
@@ -302,13 +380,12 @@ la cohérence entre les besoins métier et la solution technique, et de faire
 
 ### Schéma
 
-Le schéma suivant présente le fonctionnement général de la méthode 2TUP.
-Les éléments entre crochets peuvent être remplacés par les informations
-propres à chaque projet.
+Le schéma suivant présente le fonctionnement général de la méthode 2TUP
+appliqué au Blog des Lauréats.
 
 ![Cycle en Y](assets/images.jpg)
 
-**Figure [numéro] : Processus 2TUP appliqué à [Nom du projet]**
+**Figure : Processus 2TUP appliqué au Blog des Lauréats**
 
 La branche fonctionnelle part de la capture des besoins et aboutit à
 l'analyse fonctionnelle. En parallèle, la branche technique part des besoins
@@ -319,15 +396,15 @@ comprend la conception, le codage, les tests, la recette et le déploiement.
 ### Conclusion
 
 La méthode 2TUP fournit un cadre de travail structuré et adaptable pour la
-réalisation de **[Nom du projet]**. La séparation entre les branches
+réalisation du **Blog des Lauréats**. La séparation entre les branches
 fonctionnelle et technique facilite la compréhension des besoins et permet de
 prendre les décisions techniques au moment approprié.
 
 En réunissant ces deux branches dans une phase de réalisation progressive,
 la méthode favorise la maîtrise des risques, l'amélioration continue et
-l'alignement du produit final sur les besoins de **[utilisateurs ou
-organisation]**. Elle constitue ainsi une approche pertinente pour les
-projets dont les exigences fonctionnelles et les contraintes techniques
+l'alignement du produit final sur les besoins des lauréats, des apprenants,
+des formateurs, des recruteurs et des administrateurs. Elle constitue ainsi une approche pertinente pour
+les projets dont les exigences fonctionnelles et les contraintes techniques
 doivent être analysées conjointement.
 
 # Conclusion

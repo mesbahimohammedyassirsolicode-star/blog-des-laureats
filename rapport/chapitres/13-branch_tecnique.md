@@ -6,13 +6,12 @@ Dans cette section, nous présentons la branche technique de notre projet, qui c
 
 ## Choix technologiques
 
-Dans le cadre de ce projet, plusieurs technologies modernes et complémentaires ont été sélectionnées pour garantir la performance, la maintenabilité, la sécurité et la rapidité de la plateforme de gestion de copropriété immobilière.
+Dans le cadre du Blog des Lauréats, plusieurs technologies modernes ont été sélectionnées pour garantir la maintenabilité, la sécurité et la rapidité de la plateforme.
 
 ### Technologies Backend
 
-- **PHP 8.2+ et Laravel 12.0** : Ce duo technologique est utilisé pour développer le backend en architecture MVC, garantissant une base sécurisée, des performances accrues et un code structuré.
-- **Spatie Laravel Permission 7.4** : Bibliothèque pour la gestion professionnelle des rôles et des autorisations, garantissant un cloisonnement strict des accès.
-- **NativePHP** : Framework pour transformer l'application Laravel en application mobile (Android, iOS) pour les résidents.
+- **PHP 8.2+ et Laravel** : Ce duo technologique est utilisé pour développer le backend en architecture MVC, garantissant une base sécurisée, des performances accrues et un code structuré.
+
 
 ### Technologies Frontend
 

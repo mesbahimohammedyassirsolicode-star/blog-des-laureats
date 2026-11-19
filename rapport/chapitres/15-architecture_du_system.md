@@ -2,67 +2,48 @@
 
 ## Architecture MVC
 
-Le modèle MVC répartit une application en trois rôles :
+Le modèle MVC répartit l'application en trois rôles :
 
-- **Modèle** : représente les données et les règles qui leur sont liées.
-- **Vue** : affiche les informations et reçoit les actions de l’utilisateur.
-- **Contrôleur** : reçoit une action, sollicite le modèle et transmet le résultat à la vue.
-
-```mermaid
-flowchart LR
-    U[Utilisateur] -->|action| V[Vue]
-    V -->|requête| C[Contrôleur]
-    C -->|lecture ou modification| M[Modèle]
-    M -->|données| C
-    C -->|résultat à afficher| V
-    V -->|affichage| U
-```
-
-_Figure 1 — Échange MVC : le contrôleur coordonne la vue et le modèle lors d’une requête._
-
-Dans le projet, MVC sert de **repère de compréhension**, mais n’est pas appliqué strictement : l’interface HTML/JavaScript est côté navigateur, tandis que le point d’entrée PHP et les classes de traitement jouent les rôles de coordination. La classe `Genre` représente les données métier.
-
-## Architecture 3-tiers
-
-Cette architecture sépare l’application en couches qui communiquent de proche en proche :
-
-- **Présentation** : interface HTML/JavaScript ; envoie les requêtes et affiche les réponses.
-- **Logique métier** : traite les opérations demandées par l’utilisateur.
-- **Accès aux données** : lit et écrit les données dans leur support de stockage.
-
-```mermaid
-flowchart TB
-    U[Utilisateur] --> P[Présentation<br/>HTML / JavaScript]
-    P -->|requête HTTP / JSON| L[Logique métier<br/>PHP]
-    L --> A[Accès aux données<br/>GestionGenre ou DAO]
-    A --> D[(Fichier JSON)]
-    D -->|données| A
-    A -->|résultat| L
-    L -->|réponse JSON| P
-    P -->|affichage| U
-```
-
-_Figure 2 — Les trois tiers séparent l’interface, le traitement des opérations et le stockage._
-
-## Architecture globale
-
-Le projet permet de consulter et d’ajouter des genres. L’interface du navigateur communique avec une API PHP via `fetch`. Les données sont conservées dans un fichier JSON ; elles ne sont pas stockées dans une base de données relationnelle.
+- **Modèle** : représente les données et les règles métier.
+- **Vue** : présente les informations avec les gabarits Blade.
+- **Contrôleur** : reçoit une requête, appelle les services ou modèles nécessaires et sélectionne la vue.
 
 ```mermaid
 flowchart LR
-    U[Utilisateur] <-->|interface| UI[Navigateur<br/>index.html et app.js]
-    UI -->|GET / POST<br/>JSON| API[API PHP<br/>backend/api/api.php]
-    API --> T[Traitement PHP<br/>contrôleur ou service]
-    T --> A[Accès aux données<br/>GestionGenre ou GenreDAO]
-    A -->|crée des objets| G[Modèle Genre]
-    A <-->|lecture / écriture| D[(backend/data<br/>fichier JSON des genres)]
-    API -->|réponse JSON| UI
+    U[Utilisateur] -->|requête| R[Route Laravel]
+    R --> C[Contrôleur]
+    C --> S[Service]
+    S --> M[Modèle]
+    M -->|article| S
+    S -->|résultat| C
+    C --> V[Vue Blade]
+    V -->|réponse HTML| U
 ```
 
-_Figure 3 — Architecture commune aux versions du projet ; les noms des classes varient selon la version._
+*Figure : Organisation MVC de la consultation d'un article.*
 
-Le parcours d’une requête est le suivant :
+## Architecture du Sprint 1
 
-1. `app.js` envoie une requête **GET** pour afficher les genres ou **POST** pour en ajouter un.
-2. `api.php` transmet l’opération au traitement PHP, puis à la classe qui lit ou met à jour le fichier JSON.
-3. Le résultat est renvoyé au navigateur au format JSON ; l’interface affiche la liste actualisée.
+Pour la première fonctionnalité, le contrôleur reste mince : il récupère les paramètres de la requête et délègue la recherche de l'article à une classe Service.
+
+```mermaid
+flowchart LR
+    U[Utilisateur] -->|demande un article| R[Route Laravel]
+    R --> C[ArticleController]
+    C -->|show| S[ArticleService]
+    S -->|find| M[Article]
+    M -->|résultat| S
+    S -->|objet article| C
+    C --> V[Vue Blade]
+    V -->|réponse HTML| U
+```
+
+*Figure : Architecture de la consultation détaillée d'un article.*
+
+Le parcours d'une requête est le suivant :
+
+1. L'utilisateur demande la page d'un article à une route Laravel.
+2. Le contrôleur appelle le service dédié.
+3. Le service utilise le modèle pour récupérer l'article.
+4. Le contrôleur transmet les données à une vue Blade.
+5. Si l'article n'existe pas, l'application retourne une erreur 404 adaptée.

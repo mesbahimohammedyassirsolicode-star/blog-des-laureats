@@ -9,7 +9,8 @@ Ce sous-dossier contient les chapitres unitaires qui composent le rapport de pro
 
 ## 2. Chapitres inclus
 - `01-introduction.md` : Contexte, objectifs et démarche méthodologique.
-- `02-conclusion.md` : Synthèse des acquis, bilan technique et perspectives d'évolution.
+- `02-Contexte du projet.md` : Présentation du contexte du Blog des Lauréats.
+- `23-conclusion.md` : Synthèse des acquis, bilan technique et perspectives d'évolution.
 
 ## 3. Règle de nommage et compilation
 - Nommer les fichiers avec un préfixe numérique ordonné (`01-...`, `02-...`).

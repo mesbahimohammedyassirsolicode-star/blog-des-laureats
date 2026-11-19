@@ -4,8 +4,8 @@
 
 La méthode **2TUP** (*Two Tracks Unified Process*) est une méthode de
 développement logiciel agile et itérative. Elle peut être adaptée au contexte
-de **[Nom du projet]**, à ses objectifs et aux besoins de **[utilisateurs ou
-organisation]**.
+du **Blog des Lauréats**, à ses objectifs et aux besoins des lauréats,
+des apprenants, des formateurs, des recruteurs et des administrateurs.
 
 Sa particularité repose sur une architecture en « Y » qui sépare
 distinctement deux axes de réflexion :
@@ -15,10 +15,10 @@ distinctement deux axes de réflexion :
 - **la branche technique**, consacrée à l'étude des contraintes techniques,
   à la conception de l'architecture et au choix des technologies.
 
-La branche fonctionnelle permet de définir **[fonctionnalités ou besoins
-principaux]**, tandis que la branche technique permet de déterminer
-l'architecture et les outils nécessaires, tels que **[langages, frameworks,
-base de données ou services]**.
+La branche fonctionnelle permet de définir la consultation des articles,
+la gestion des auteurs et l'administration des contenus, tandis que la branche
+technique permet de déterminer l'architecture, les technologies Laravel et
+MySQL ainsi que les outils de présentation.
 
 Ces deux branches progressent en parallèle, puis se rejoignent dans une phase
 de réalisation. Cette organisation permet de limiter les risques, de vérifier
@@ -27,13 +27,12 @@ la cohérence entre les besoins métier et la solution technique, et de faire
 
 ### Schéma
 
-Le schéma suivant présente le fonctionnement général de la méthode 2TUP.
-Les éléments entre crochets peuvent être remplacés par les informations
-propres à chaque projet.
+Le schéma suivant présente le fonctionnement général de la méthode 2TUP
+appliqué au Blog des Lauréats.
 
 ![Cycle en Y](../assets/images.jpg)
 
-**Figure [numéro] : Processus 2TUP appliqué à [Nom du projet]**
+**Figure : Processus 2TUP appliqué au Blog des Lauréats**
 
 La branche fonctionnelle part de la capture des besoins et aboutit à
 l'analyse fonctionnelle. En parallèle, la branche technique part des besoins
@@ -44,13 +43,13 @@ comprend la conception, le codage, les tests, la recette et le déploiement.
 ### Conclusion
 
 La méthode 2TUP fournit un cadre de travail structuré et adaptable pour la
-réalisation de **[Nom du projet]**. La séparation entre les branches
+réalisation du **Blog des Lauréats**. La séparation entre les branches
 fonctionnelle et technique facilite la compréhension des besoins et permet de
 prendre les décisions techniques au moment approprié.
 
 En réunissant ces deux branches dans une phase de réalisation progressive,
 la méthode favorise la maîtrise des risques, l'amélioration continue et
-l'alignement du produit final sur les besoins de **[utilisateurs ou
-organisation]**. Elle constitue ainsi une approche pertinente pour les
-projets dont les exigences fonctionnelles et les contraintes techniques
+l'alignement du produit final sur les besoins des lauréats, des apprenants,
+des formateurs, des recruteurs et des administrateurs. Elle constitue ainsi une approche pertinente pour
+les projets dont les exigences fonctionnelles et les contraintes techniques
 doivent être analysées conjointement.

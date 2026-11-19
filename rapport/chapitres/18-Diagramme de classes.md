@@ -1,75 +1,57 @@
+# Diagramme de classes
+
 ```mermaid
 classDiagram
     direction TB
 
-    class Tutor {
-        -int id
-        -string firstName
-        -string lastName
-        -string email
-        -string phone
-        -string bio
-        +getFullName() string
-        +getCourses() List~Course~
-    }
-
-    class SchoolSubject {
+    class User {
         -int id
         -string name
-        -string description
-        -datetime createdAt
-        -datetime updatedAt
-        +getCourses() List~Course~
-        +toArray() array
+        -string email
+        -string password
+        -string role
+        +getArticles() List~Article~
     }
 
-    class Course {
+    class Laureat {
+        -int id
+        -string biography
+        -string promotion
+        -string speciality
+        +getUser() User
+        +getArticles() List~Article~
+    }
+
+    class Article {
         -int id
         -string title
         -string slug
-        -string description
-        -int tutorId
-        -int subjectId
+        -text content
         -string status
-        -datetime createdAt
-        -datetime updatedAt
-        +getTutor() Tutor
-        +getSubject() SchoolSubject
-        +getEnrolledStudents() List~Student~
+        -datetime publishedAt
         +publish() void
         +draft() void
-        +toArray() array
     }
 
-    class Student {
+    class Category {
         -int id
-        -string firstName
-        -string lastName
-        -string email
-        -string studentNumber
-        -datetime registeredAt
-        +getFullName() string
-        +getEnrolledCourses() List~Course~
-        +enrollInCourse(courseId) bool
+        -string name
+        -string slug
+        +getArticles() List~Article~
     }
 
-    class Enrollment {
-        -int id
-        -int studentId
-        -int courseId
-        -datetime enrolledAt
-        -string progressStatus
-        -float grade
-        +getStudent() Student
-        +getCourse() Course
+    class Actor {
+        <<enumeration>>
+        Laureat
+        Apprenant
+        Formateur
+        Recruteur
+        Administrateur
     }
 
-    Tutor "1" --> "0..*" Course : enseigne / dispense
-    SchoolSubject "1" --> "0..*" Course : catégorise
-
-    Student "1" --> "0..*" Enrollment : effectue
-    Course "1" --> "0..*" Enrollment : enregistre
-    Student "0..*" .. "0..*" Course : s'inscrit à
+    User "1" --> "0..1" Laureat : possède
+    Laureat "1" --> "0..*" Article : rédige
+    Category "1" --> "0..*" Article : classe
 ```
 
 ![Diagramme de classes](../assets/diagramme%20de%20class.png)
