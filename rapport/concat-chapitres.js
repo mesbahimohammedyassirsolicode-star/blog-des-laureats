@@ -28,7 +28,7 @@ const path = require('path');
 const ROOT = __dirname;
 const CHAPTERS_DIR = path.join(ROOT, 'chapitres');
 const ASSETS_DIR = path.join(ROOT, 'assets');
-const OUTPUT_FILE = path.join(ROOT, 'rapport-blog.md');
+const OUTPUT_FILE = path.join(ROOT, 'rapport.md');
 
 console.log('\n========================================');
 console.log('       BLOG DES LAUREATS');
