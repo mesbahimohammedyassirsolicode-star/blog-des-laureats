@@ -1,5 +1,3 @@
-
-
 # Rapport de Projet : Blog des Lauréats
 
 > Document consolidé à partir des chapitres modulaires.
@@ -12,7 +10,7 @@
 
 ---
 
-# Chapitre 1 : Introduction
+# Introduction
 
 ---
 
@@ -113,6 +111,41 @@ Le Design Thinking est donc une méthode structurée et flexible qui permet de t
 
 ---
 
+# Branche technique
+
+Dans cette section, nous présentons la branche technique de notre projet, qui consiste à décrire les choix technologiques, les outils et les architectures adoptés pour assurer le bon fonctionnement de l'application, tout en garantissant une solution performante, sécurisée et adaptée aux besoins identifiés.
+
+---
+
+## Choix technologiques
+
+Dans le cadre de ce projet, plusieurs technologies modernes et complémentaires ont été sélectionnées pour garantir la performance, la maintenabilité, la sécurité et la rapidité de la plateforme de gestion de copropriété immobilière.
+
+### Technologies Backend
+
+- **PHP 8.2+ et Laravel 12.0** : Ce duo technologique est utilisé pour développer le backend en architecture MVC, garantissant une base sécurisée, des performances accrues et un code structuré.
+- **Spatie Laravel Permission 7.4** : Bibliothèque pour la gestion professionnelle des rôles et des autorisations, garantissant un cloisonnement strict des accès.
+- **NativePHP** : Framework pour transformer l'application Laravel en application mobile (Android, iOS) pour les résidents.
+
+### Technologies Frontend
+
+- **Blade Templates** : Moteur de rendu HTML, natif de Laravel, utilisé pour structurer l'interface utilisateur en composants réutilisables.
+- **Tailwind CSS** : Framework CSS utilitaire ultra-rapide, permettant de concevoir une interface sur mesure, moderne, responsive et compatible mode sombre.
+- **Alpine** : Framework JavaScript léger et réactif, utilisé pour les animations du frontend (barres de recherche, modales, menus déroulants).
+- **Preline** : Bibliothèque de composants UI basés sur Tailwind CSS, accélérant le développement avec des modèles prêts à l'emploi.
+- **Vite** : Outil de build moderne, optimisant la compilation des ressources CSS/JS pour un chargement de page ultra-rapide en production.
+
+### Base de données
+
+- **MySQL** : Système de gestion de base de données relationnelle (SGBDR) fiable, utilisé pour stocker l'intégralité des données de l'application.
+
+### Outils et utilitaires externes
+
+- **Mermaid** : Outil permettant de générer des schémas et diagrammes à partir d'une syntaxe textuelle simple.
+- **PlantUML** : Solution utilisée pour concevoir les différents diagrammes UML nécessaires à l'analyse et à la documentation du système.
+
+---
+
 # Stack technologique
 
 ---
@@ -196,6 +229,8 @@ Le parcours d’une requête est le suivant :
 
 ---
 
+# Diagramme de classes
+
 ```mermaid
 classDiagram
     direction TB
@@ -270,7 +305,7 @@ classDiagram
     Student "0..*" .. "0..*" Course : s'inscrit à
 ```
 
-![Diagramme de classes](assets/diagramme%20de%20class.png)
+![Diagramme de classes](assets/diagramme de class.png)
 
 ---
 
@@ -286,7 +321,68 @@ classDiagram
 
 ---
 
-# Chapitre 2 : Conclusion
+# rapport methode agile template
+
+## 2.3 2TUP
+
+### Définition
+
+La méthode **2TUP** (*Two Tracks Unified Process*) est une méthode de
+développement logiciel agile et itérative. Elle peut être adaptée au contexte
+de **[Nom du projet]**, à ses objectifs et aux besoins de **[utilisateurs ou
+organisation]**.
+
+Sa particularité repose sur une architecture en « Y » qui sépare
+distinctement deux axes de réflexion :
+
+- **la branche fonctionnelle**, consacrée à la compréhension des utilisateurs,
+  des processus et des besoins métier ;
+- **la branche technique**, consacrée à l'étude des contraintes techniques,
+  à la conception de l'architecture et au choix des technologies.
+
+La branche fonctionnelle permet de définir **[fonctionnalités ou besoins
+principaux]**, tandis que la branche technique permet de déterminer
+l'architecture et les outils nécessaires, tels que **[langages, frameworks,
+base de données ou services]**.
+
+Ces deux branches progressent en parallèle, puis se rejoignent dans une phase
+de réalisation. Cette organisation permet de limiter les risques, de vérifier
+la cohérence entre les besoins métier et la solution technique, et de faire
+évoluer progressivement le produit.
+
+### Schéma
+
+Le schéma suivant présente le fonctionnement général de la méthode 2TUP.
+Les éléments entre crochets peuvent être remplacés par les informations
+propres à chaque projet.
+
+![Cycle en Y](assets/images.jpg)
+
+**Figure [numéro] : Processus 2TUP appliqué à [Nom du projet]**
+
+La branche fonctionnelle part de la capture des besoins et aboutit à
+l'analyse fonctionnelle. En parallèle, la branche technique part des besoins
+techniques et aboutit à la définition de l'architecture et des technologies.
+La convergence des deux branches déclenche la phase de réalisation, qui
+comprend la conception, le codage, les tests, la recette et le déploiement.
+
+### Conclusion
+
+La méthode 2TUP fournit un cadre de travail structuré et adaptable pour la
+réalisation de **[Nom du projet]**. La séparation entre les branches
+fonctionnelle et technique facilite la compréhension des besoins et permet de
+prendre les décisions techniques au moment approprié.
+
+En réunissant ces deux branches dans une phase de réalisation progressive,
+la méthode favorise la maîtrise des risques, l'amélioration continue et
+l'alignement du produit final sur les besoins de **[utilisateurs ou
+organisation]**. Elle constitue ainsi une approche pertinente pour les
+projets dont les exigences fonctionnelles et les contraintes techniques
+doivent être analysées conjointement.
+
+---
+
+# Conclusion
 
 ---
 
