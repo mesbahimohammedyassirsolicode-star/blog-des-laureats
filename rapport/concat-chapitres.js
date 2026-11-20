@@ -49,6 +49,70 @@ if (!fs.existsSync(ASSETS_DIR)) {
 }
 
 // ============================================
+// 2. GENERATION AUTOMATIQUE DE LA TABLE DES MATIERES
+// ============================================
+
+function slugifyHeading(heading) {
+    return heading
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .replace(/['’]/g, '')
+        .replace(/[^\p{L}\p{N}\s-]/gu, '')
+        .trim()
+        .replace(/\s+/g, '-');
+}
+
+function getFirstHeading(filename) {
+    const content = fs.readFileSync(
+        path.join(CHAPTERS_DIR, filename),
+        'utf8'
+    );
+    const match = content.match(/^#\s+(.+?)\s*#*\s*$/m);
+
+    if (!match) {
+        return path.basename(filename, '.md')
+            .replace(/^\d+\s*[-_.]\s*/, '');
+    }
+
+    return match[1]
+        .replace(/^Chapitre\s+\d+\s*:\s*/i, '')
+        .trim();
+}
+
+function generateTableOfContents(files) {
+    const tableFile = files.find(filename =>
+        /^2(?:\b|[\s_.-]).*table.*matières.*\.md$/i.test(filename)
+    );
+
+    if (!tableFile) {
+        console.warn('ATTENTION : fichier 2 - Table des matières introuvable.');
+        return;
+    }
+
+    const lines = ['# Table des matières', ''];
+
+    files.forEach(filename => {
+        const number = getNumber(filename);
+
+        if (!Number.isFinite(number)) {
+            return;
+        }
+
+        const heading = getFirstHeading(filename);
+        lines.push(`- [${number} - ${heading}](#${slugifyHeading(heading)})`);
+    });
+
+    fs.writeFileSync(
+        path.join(CHAPTERS_DIR, tableFile),
+        lines.join('\n') + '\n',
+        'utf8'
+    );
+
+    console.log(`✓ Table des matières générée : ${tableFile}`);
+}
+
+// ============================================
 // 3. DETECTION AUTOMATIQUE DES FICHIERS
 // ============================================
 
@@ -61,6 +125,8 @@ const allFiles = fs.readdirSync(CHAPTERS_DIR, {
         entry.name.toLowerCase() !== 'readme.md'
     )
     .map(entry => entry.name);
+
+generateTableOfContents(allFiles);
 
 // ============================================
 // 4. FONCTIONS DE TRI
