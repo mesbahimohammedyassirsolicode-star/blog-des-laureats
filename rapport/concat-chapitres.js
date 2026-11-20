@@ -91,8 +91,21 @@ function generateTableOfContents(files) {
     }
 
     const lines = ['# Table des matières', ''];
+    const sortedFiles = [...files].sort((a, b) => {
+        const numberA = getNumber(a);
+        const numberB = getNumber(b);
 
-    files.forEach(filename => {
+        if (numberA !== numberB) {
+            return numberA - numberB;
+        }
+
+        return a.localeCompare(b, 'fr', {
+            numeric: true,
+            sensitivity: 'base'
+        });
+    });
+
+    sortedFiles.forEach(filename => {
         const number = getNumber(filename);
 
         if (!Number.isFinite(number)) {

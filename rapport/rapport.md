@@ -20,6 +20,14 @@ Merci à tous.
 # Table des matières
 
 - [1 - Remerciements](#remerciements)
+- [2 - Table des matières](#table-des-matieres)
+- [3 - Introduction](#introduction)
+- [4 - Contexte du projet](#contexte-du-projet)
+- [5 - Cahier des charges](#cahier-des-charges)
+- [6 - Méthodologie de travail](#methodologie-de-travail)
+- [7 - Méthode de travail](#methode-de-travail)
+- [8 - Design thinking](#design-thinking)
+- [9 - Planification](#planification)
 - [10 - Carte d'empathie](#carte-dempathie)
 - [11 - Définition du problème](#definition-du-probleme)
 - [12 - Idéation](#ideation)
@@ -30,14 +38,6 @@ Merci à tous.
 - [17 - Réalisation](#realisation)
 - [18 - Interfaces](#interfaces)
 - [19 - Conclusion](#conclusion)
-- [2 - Table des matières](#table-des-matieres)
-- [3 - Introduction](#introduction)
-- [4 - Contexte du projet](#contexte-du-projet)
-- [5 - Cahier des charges](#cahier-des-charges)
-- [6 - Méthodologie de travail](#methodologie-de-travail)
-- [7 - Méthode de travail](#methode-de-travail)
-- [8 - Design thinking](#design-thinking)
-- [9 - Planification](#planification)
 
 # Introduction
 
