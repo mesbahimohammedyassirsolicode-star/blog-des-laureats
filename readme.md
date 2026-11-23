@@ -1,12 +1,8 @@
-# Blog des Lauréats
+# Blog des Lauréats de l’EFP
 
 Projet pédagogique de Solicode Tanger destiné à présenter les parcours professionnels et les articles des lauréats de l'établissement.
 
-## Description
-
 Le **Blog des Lauréats** permet aux lauréats de partager leurs expériences professionnelles et aux apprenants actuels de consulter ces publications.
-
-Le dépôt contient actuellement les éléments de cadrage, de planification, de documentation et de présentation du projet. Il ne contient pas encore l'application Laravel complète.
 
 ## Contexte
 
@@ -14,6 +10,15 @@ Le dépôt contient actuellement les éléments de cadrage, de planification, de
 - **Promotion** : 2026/2027 DevCave.
 - **Formateur référent** : ES-SARRAJ Fouad.
 - **Sprint actif** : Sprint 1.
+
+## Équipe projet
+
+- **Mohammed Yassir Mesbahi** : Scrum Master et membre de l'équipe de développement.
+- **ES-SARRAJ Fouad** : Product Owner et formateur référent.
+
+## Feuille d'engagement
+
+- [Feuille d'engagement active : Sprint 0](./sprints/sprint-0.md)
 
 ## Fonctionnalités prévues
 
@@ -34,10 +39,10 @@ Le dépôt contient actuellement les éléments de cadrage, de planification, de
 
 ## Stack technique prévue
 
-- **Backend** : PHP 8.2+ et Laravel.
-- **Architecture du Sprint 1** : contrôleur mince délégant la logique à une classe Service.
-- **Frontend** : Blade, HTML5, CSS3, JavaScript, Tailwind CSS, Alpine.js et éventuellement Preline.
-- **Base de données** : MySQL pour la version complète.
+- **Backend** : Laravel.
+- **Base de données** : MySQL.
+- **Frontend** : Tailwind CSS, Preline UI et Alpine.js.
+- **Architecture** : contrôleur mince délégant la logique à une classe Service.
 - **Modélisation** : Mermaid pour les diagrammes UML.
 - **Gestion de versions** : Git et GitHub CLI (`gh`).
 - **Documentation** : Markdown et Marp.
