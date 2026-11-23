@@ -34,36 +34,35 @@ progressives au fil des sprints.
 - Livrer une première version fonctionnelle de manière itérative, en
   respectant les engagements de chaque sprint.
 
-### Application de la méthode SMART au projet
+Les objectifs de réalisation du produit sont formulés selon les critères SMART :
 
-L'objectif global du projet est de livrer une première version permettant aux
-visiteurs et aux apprenants de consulter les articles et les profils des
-lauréats sur le Web et sur mobile, tout en réservant la gestion éditoriale à
-la plateforme Web. Cet objectif est décliné selon les cinq critères SMART :
-
-| Critère | Application au Blog des Lauréats |
-| --- | --- |
-| **Spécifique** | Le projet cible la consultation d'articles et de profils, la recherche, la lecture mobile et la gestion éditoriale sécurisée sur le Web. |
-| **Mesurable** | La réussite est vérifiée avec des indicateurs chiffrés : 100 % des articles publiés consultables sur les deux canaux, au moins 1 profil complet par lauréat présenté, 100 % des fonctions d'administration protégées et 0 erreur bloquante lors de la recette. |
-| **Atteignable** | Le périmètre est limité à la lecture mobile : la rédaction, la modification, la modération et l'administration restent sur le Web. Le développement itératif par sprints permet de livrer progressivement. |
-| **Pertinent** | Les objectifs répondent directement à la mission de valorisation des lauréats et aux besoins des visiteurs, apprenants, formateurs et administrateurs. |
-| **Temporellement défini** | Chaque résultat possède une échéance : fin de la version initiale, fin du sprint mobile, revue de sprint ou mise en production. |
-
-Les indicateurs ci-dessous rendent ces objectifs mesurables et permettent de
-contrôler leur réalisation lors des revues de sprint et de la recette finale.
-
-### Objectifs SMART et indicateurs de réussite
-
-| Objectif | Indicateur mesurable | Échéance |
-| --- | --- | --- |
-| Mettre à disposition la consultation web | 100 % des articles publiés sont consultables par catégorie et par recherche sur la plateforme web | Fin de la version initiale |
-| Assurer l'accès mobile nomade | 100 % des articles publiés exposés par le canal de consultation sont affichés et lisibles sur smartphone | Fin du sprint mobile |
-| Garantir la lecture mobile | Un visiteur ou un apprenant peut ouvrir le catalogue puis lire intégralement un article sans fonctionnalité d'édition | Avant la mise en production mobile |
-| Valoriser les parcours des lauréats | Au moins 1 profil complet est associé à chaque lauréat présenté | Avant la mise en production |
-| Sécuriser la gestion éditoriale | 100 % des fonctionnalités d'administration nécessitent une authentification et une autorisation adaptées sur la plateforme web | Fin du sprint d'implémentation concerné |
-| Maîtriser la publication | Chaque article possède un statut identifiable et seuls les contenus publiés sont visibles sur le web et le mobile | Fin de la version initiale |
-| Respecter la planification Scrum | Réaliser au moins 90 % des tâches engagées dans chaque sprint, ou documenter les tâches reportées | À la revue de chaque sprint |
-| Maintenir une expérience fiable | Obtenir 0 erreur bloquante sur les parcours principaux web et mobile lors de la recette | Avant la livraison de la version initiale |
+- **Spécifique (S) :** Concevoir, développer et déployer une plateforme web
+  autonome permettant la rédaction, la relecture éditoriale, la publication et
+  la consultation d'articles professionnels classés par catégories, ainsi
+  qu'une application mobile dédiée à la consultation et à la lecture.
+- **Mesurable (M) :**
+  - **Capacité d'accueil initiale :** héberger au minimum 50 articles publiés
+    lors du premier trimestre.
+  - **Temps d'accès :** obtenir un temps de chargement d'un article inférieur
+    à 300 millisecondes en conditions normales.
+  - **Disponibilité et portabilité :** proposer une interface 100 % accessible
+    et responsive sur terminaux mobiles, tablettes et ordinateurs de bureau.
+  - **Accès mobile nomade :** rendre 100 % des articles publiés disponibles en
+    lecture seule sur l'application mobile.
+- **Atteignable (A) :** Réalisation incrémentale structurée en sprints Scrum
+  courts, avec des itérations de 80 heures et la livraison de tranches
+  verticales de fonctionnalités testées de bout en bout.
+- **Réaliste (R) :** Utilisation d'une stack technologique robuste et
+  standardisée (Laravel 13, MySQL, Tailwind CSS, Preline UI, Alpine.js)
+  évitant la surcomplexité technique et la dette architecturale.
+- **Temporellement défini (T) :**
+  - **Sprint 0 :** finalisation du cadrage, de l'infrastructure et des
+    prototypes validés.
+  - **Sprint 1 :** socle technique, persistance et première tranche
+    fonctionnelle opérationnelle.
+  - **Sprint mobile :** mise à disposition du catalogue et de la lecture des
+    articles sur smartphone.
+  - **Clôture :** déploiement et mise en production à la fin du cycle agile.
 
 ## 3. Matrice de Périmètre
 
