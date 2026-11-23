@@ -22,6 +22,8 @@ vision, les objectifs, le périmètre et les parties prenantes du projet.
 
 - [`note-cadrage.md`](./cadrage/note-cadrage.md) : présentation du projet,
   objectifs SMART, périmètre, parties prenantes et risques.
+- [`stack-technique.md`](./cadrage/stack-technique.md) : exigences techniques
+  et justification des choix de backend, base de données, frontend et tests.
 
 ### Analyse
 
