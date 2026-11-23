@@ -34,6 +34,24 @@ progressives au fil des sprints.
 - Livrer une première version fonctionnelle de manière itérative, en
   respectant les engagements de chaque sprint.
 
+### Application de la méthode SMART au projet
+
+L'objectif global du projet est de livrer une première version permettant aux
+visiteurs et aux apprenants de consulter les articles et les profils des
+lauréats sur le Web et sur mobile, tout en réservant la gestion éditoriale à
+la plateforme Web. Cet objectif est décliné selon les cinq critères SMART :
+
+| Critère | Application au Blog des Lauréats |
+| --- | --- |
+| **Spécifique** | Le projet cible la consultation d'articles et de profils, la recherche, la lecture mobile et la gestion éditoriale sécurisée sur le Web. |
+| **Mesurable** | La réussite est vérifiée avec des indicateurs chiffrés : 100 % des articles publiés consultables sur les deux canaux, au moins 1 profil complet par lauréat présenté, 100 % des fonctions d'administration protégées et 0 erreur bloquante lors de la recette. |
+| **Atteignable** | Le périmètre est limité à la lecture mobile : la rédaction, la modification, la modération et l'administration restent sur le Web. Le développement itératif par sprints permet de livrer progressivement. |
+| **Pertinent** | Les objectifs répondent directement à la mission de valorisation des lauréats et aux besoins des visiteurs, apprenants, formateurs et administrateurs. |
+| **Temporellement défini** | Chaque résultat possède une échéance : fin de la version initiale, fin du sprint mobile, revue de sprint ou mise en production. |
+
+Les indicateurs ci-dessous rendent ces objectifs mesurables et permettent de
+contrôler leur réalisation lors des revues de sprint et de la recette finale.
+
 ### Objectifs SMART et indicateurs de réussite
 
 | Objectif | Indicateur mesurable | Échéance |
